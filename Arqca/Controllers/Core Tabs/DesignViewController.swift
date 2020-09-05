@@ -84,7 +84,7 @@ class DesignViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        backgroundView.frame = CGRect(x: 12, y: view.safeAreaInsets.top + 20, width: view.width - 24, height: view.heigth -  view.safeAreaInsets.bottom - 260)
+        backgroundView.frame = CGRect(x: 12, y: view.safeAreaInsets.top + 20, width: view.width - 24, height: view.heigth -  view.safeAreaInsets.bottom - 220)
         
         designaLabel.frame = CGRect(x: 10, y: backgroundView.safeAreaInsets.top + 20, width: backgroundView.width - 20, height: 50)
         
@@ -152,8 +152,6 @@ class DesignViewController: UIViewController {
         backgroundView.addSubview(designaLabel)
         backgroundView.addSubview(interiorButton)
         backgroundView.addSubview(exteriorButton)
-        
-//        backgroundView.addSubview(designTableview)
         
     }
 }

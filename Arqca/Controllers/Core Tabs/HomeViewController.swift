@@ -145,13 +145,13 @@ class HomeViewController: UIViewController {
         
         scrollView.frame = view.bounds
         
-        scrollView.contentSize = CGSize(width: view.width, height: view.heigth * 2)
+        scrollView.contentSize = CGSize(width: view.width, height: 830)
         
         headerView.frame = CGRect(x: 10, y: scrollView.top, width: scrollView.width - 20, height: view.heigth / 4)
         
         configureHeaderView()
         
-        backgroundView.frame = CGRect(x: 10, y: headerView.bottom + 30, width: view.width - 20, height: (scrollView.heigth * 2) - 250 )
+        backgroundView.frame = CGRect(x: 10, y: headerView.bottom + 30, width: view.width - 20, height: 570 )
         
         projectGuerreroButton.frame = CGRect(x: 10, y: view.top + 15, width: backgroundView.width - 20, height: 170)
         
@@ -168,9 +168,6 @@ class HomeViewController: UIViewController {
         configureProjectGuerrero()
         configureRemodelacionBelenButton()
         configureRoofGardenMartinezButton()
-        
-//        tableView.frame = CGRect(x: 10, y: view.top + 10, width: backgroundView.width - 20, height: backgroundView.heigth - 20)
-        
         
     }
     
@@ -269,27 +266,9 @@ class HomeViewController: UIViewController {
         remodelacionBelenButton.addSubview(remodelacionBelenLabel)
         backgroundView.addSubview(roofgardenMartinezButton)
         roofgardenMartinezButton.addSubview(roofGardenMartinezLabel)
-        
-        
-//        backgroundView.addSubview(tableView)
-        
 
     }
     
     
 }
 
-//
-//extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-//
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        10
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        
-//    }
-//
-//
-//}
