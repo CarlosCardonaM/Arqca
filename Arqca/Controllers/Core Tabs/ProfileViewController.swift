@@ -10,7 +10,25 @@ import UIKit
 import FirebaseAuth
 
 class ProfileViewController: UIViewController {
-
+    
+    private var headerView: UIView = {
+        let header = UIView()
+        header.clipsToBounds = true
+        header.backgroundColor = .systemTeal
+        header.layer.cornerRadius = CGFloat(20)
+        return header
+    }()
+    
+    private var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "person.circle")
+        imageView.tintColor = .gray
+        imageView.contentMode = .scaleAspectFit
+        imageView.layer.masksToBounds = true
+        imageView.layer.borderWidth = 2
+        imageView.layer .borderColor = UIColor.lightGray.cgColor
+        return imageView
+    }()
     
     private var signOutButton: UIButton = {
         let button = UIButton()
@@ -36,12 +54,28 @@ class ProfileViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        
         signOutButton.frame = CGRect(x: 30, y: view.heigth - view.safeAreaInsets.bottom - 100, width: view.width - 60, height: 52)
+        
+        headerView.frame = CGRect(x: 10, y: view.safeAreaInsets.top, width: view.width - 20, height: view.heigth / 4)
+        
+        configureHeaderView()
     }
     
+    private func configureHeaderView() {
+        
+        
+        
+        //        Add Arqca Logo
+        let logoImage = UIImageView(image: UIImage(systemName: "person.circle"))
+        headerView.addSubview(logoImage)
+        logoImage.tintColor = .systemGray
+        logoImage.frame = CGRect(x: headerView.width / 4.35, y: 15, width: headerView.width / 2, height: headerView.heigth - 25)
+    }
     
     private func addSubviews() {
         view.addSubview(signOutButton)
+        view.addSubview(headerView)
         
     }
     

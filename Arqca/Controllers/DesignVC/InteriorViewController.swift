@@ -1,5 +1,5 @@
 //
-//  ExteriorViewController.swift
+//  InteriorViewController.swift
 //  Arqca
 //
 //  Created by Carlos Cardona on 04/09/20.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ExteriorViewController: UINavigationController {
+class InteriorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        title = "Hole"
+        view.backgroundColor = UIColor.systemBackground
     }
     
 }

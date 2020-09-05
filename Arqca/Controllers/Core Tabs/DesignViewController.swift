@@ -35,6 +35,7 @@ class DesignViewController: UIViewController {
     private var interiorLabel: UILabel = {
         let label = UILabel()
         label.text = "Interiors"
+        label.textColor = UIColor.white
         label.textAlignment = .left
         label.font = .systemFont(ofSize: 25)
         return label
@@ -43,6 +44,7 @@ class DesignViewController: UIViewController {
     private var exteriorLabel: UILabel = {
         let label = UILabel()
         label.text = "Exteriors"
+        label.textColor = UIColor.white
         label.textAlignment = .left
         label.font = .systemFont(ofSize: 25)
         return label
@@ -73,6 +75,10 @@ class DesignViewController: UIViewController {
         super.viewDidLoad()
         title = "Design"
         addSubviews()
+        
+        interiorButton.addTarget(self, action: #selector(didTapInteriorButton), for: .touchUpInside)
+        
+        exteriorButton.addTarget(self, action: #selector(didTapExteriorButton), for: .touchUpInside)
     }
     
     override func viewDidLayoutSubviews() {
@@ -125,10 +131,17 @@ class DesignViewController: UIViewController {
     }
     
     @objc private func didTapInteriorButton() {
-            }
+        print("tapped too")
+        let vc = InteriorViewController()
+//        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true)
+    }
     
     @objc private func didTapExteriorButton() {
-        
+        print("tapped")
+        let vc = TestViewController()
+//        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true)
     }
     
     private func addSubviews() {
