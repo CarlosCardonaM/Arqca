@@ -9,12 +9,12 @@
 import UIKit
 
 class ExteriorViewController: UIViewController {
-
+    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = UIColor.systemBackground
-        
+        title = "Fuck Yeah"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(didTapBackbutton))
     }
     

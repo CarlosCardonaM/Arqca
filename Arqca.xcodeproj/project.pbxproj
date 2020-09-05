@@ -15,6 +15,9 @@
 		4887416D24FF2C43004B61C3 /* DesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4887416C24FF2C43004B61C3 /* DesignViewController.swift */; };
 		4887416F24FF2C5E004B61C3 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4887416E24FF2C5E004B61C3 /* NotificationsViewController.swift */; };
 		4887417124FF2C78004B61C3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4887417024FF2C78004B61C3 /* ProfileViewController.swift */; };
+		489B504A2503FB4D0081887A /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489B50492503FB4D0081887A /* ProjectTableViewCell.swift */; };
+		489B504D25040C350081887A /* GuerreroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489B504C25040C350081887A /* GuerreroViewController.swift */; };
+		489B504F25040D8D0081887A /* remodelacionBelenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489B504E25040D8D0081887A /* remodelacionBelenViewController.swift */; };
 		48A66C7225006BFD004B18D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48A66C7125006BFC004B18D9 /* GoogleService-Info.plist */; };
 		48B4672A24FF0FAF008B37C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B4672924FF0FAF008B37C6 /* AppDelegate.swift */; };
 		48B4672C24FF0FAF008B37C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B4672B24FF0FAF008B37C6 /* SceneDelegate.swift */; };
@@ -37,6 +40,9 @@
 		4887416C24FF2C43004B61C3 /* DesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignViewController.swift; sourceTree = "<group>"; };
 		4887416E24FF2C5E004B61C3 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		4887417024FF2C78004B61C3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		489B50492503FB4D0081887A /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
+		489B504C25040C350081887A /* GuerreroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuerreroViewController.swift; sourceTree = "<group>"; };
+		489B504E25040D8D0081887A /* remodelacionBelenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = remodelacionBelenViewController.swift; sourceTree = "<group>"; };
 		48A66C7125006BFC004B18D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		48B4672624FF0FAF008B37C6 /* Arqca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arqca.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B4672924FF0FAF008B37C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		489B504B25040C170081887A /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				489B504C25040C350081887A /* GuerreroViewController.swift */,
+				489B504E25040D8D0081887A /* remodelacionBelenViewController.swift */,
+			);
+			path = Projects;
+			sourceTree = "<group>";
+		};
 		48B4671D24FF0FAE008B37C6 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +125,7 @@
 		48B4673E24FF0FCC008B37C6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				489B504B25040C170081887A /* Projects */,
 				48F85A4E250305A700532B63 /* DesignVC */,
 				48CE385124FF3B8000B3C88A /* Core Tabs */,
 				48CE384C24FF3B0F00B3C88A /* Onboarding */,
@@ -154,6 +170,7 @@
 				484D3A7B2503317C00167561 /* InteriorViewController.swift */,
 				484D3A7D250331C000167561 /* ExteriorViewController.swift */,
 				484D3A7F25034EF700167561 /* TestViewController.swift */,
+				489B50492503FB4D0081887A /* ProjectTableViewCell.swift */,
 			);
 			path = DesignVC;
 			sourceTree = "<group>";
@@ -291,7 +308,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				489B504F25040D8D0081887A /* remodelacionBelenViewController.swift in Sources */,
 				484D3A8025034EF700167561 /* TestViewController.swift in Sources */,
+				489B504D25040C350081887A /* GuerreroViewController.swift in Sources */,
 				48CE384E24FF3B2D00B3C88A /* LoginViewController.swift in Sources */,
 				48B4672A24FF0FAF008B37C6 /* AppDelegate.swift in Sources */,
 				48B4672C24FF0FAF008B37C6 /* SceneDelegate.swift in Sources */,
@@ -301,6 +320,7 @@
 				4887416F24FF2C5E004B61C3 /* NotificationsViewController.swift in Sources */,
 				4887417124FF2C78004B61C3 /* ProfileViewController.swift in Sources */,
 				485000BC250169BF0052A4B5 /* AuthManager.swift in Sources */,
+				489B504A2503FB4D0081887A /* ProjectTableViewCell.swift in Sources */,
 				4887416D24FF2C43004B61C3 /* DesignViewController.swift in Sources */,
 				484D3A7E250331C000167561 /* ExteriorViewController.swift in Sources */,
 				484D3A7C2503317C00167561 /* InteriorViewController.swift in Sources */,

@@ -15,9 +15,8 @@ class RegistrationViewController: UIViewController {
     private var labelTitle: UILabel = {
         let label = UILabel()
         label.text = "Sign Up"
-        label.textColor = UIColor.white
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 50, weight: .ultraLight)
+        label.font = .systemFont(ofSize: 50, weight: .regular)
         return label
     }()
     
@@ -91,7 +90,7 @@ class RegistrationViewController: UIViewController {
     private var registerButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor.systemBlue
-        button.setTitle("Log In", for: .normal)
+        button.setTitle("Sign Up", for: .normal)
         button.layer.cornerRadius = CGFloat(10)
         button.layer.masksToBounds = true
         button.setTitleColor(UIColor.white, for: .normal)
@@ -120,17 +119,17 @@ class RegistrationViewController: UIViewController {
         
         labelTitle.frame =  CGRect(x: 35, y: 85, width: view.width / 2, height: 100)
         
-        nameField.frame =  CGRect(x: 35, y: labelTitle.bottom + 80, width: view.width / 3.2, height: 36)
+        nameField.frame =  CGRect(x: 35, y: labelTitle.bottom + 80, width: view.width / 3.2, height: 52)
         
-        lastNameField.frame =  CGRect(x: nameField.right + 10, y: labelTitle.bottom + 80, width: view.width / 2, height: 36)
+        lastNameField.frame =  CGRect(x: nameField.right + 10, y: labelTitle.bottom + 80, width: view.width / 2, height: 52)
         
-        emailField.frame =  CGRect(x: 35, y: nameField.bottom + 10, width: view.width - 70, height: 36)
+        emailField.frame =  CGRect(x: 35, y: nameField.bottom + 10, width: view.width - 70, height: 52)
         
-        passwordField.frame =  CGRect(x: 35, y: emailField.bottom + 10, width: view.width - 70, height: 36)
+        passwordField.frame =  CGRect(x: 35, y: emailField.bottom + 10, width: view.width - 70, height: 52)
         
-        confirmedPasswordField.frame =  CGRect(x: 35, y: passwordField.bottom + 10, width: view.width - 70, height: 36)
+        confirmedPasswordField.frame =  CGRect(x: 35, y: passwordField.bottom + 10, width: view.width - 70, height: 52)
         
-        registerButton.frame =  CGRect(x: 35, y: confirmedPasswordField.bottom + 80, width: view.width - 70, height: 36)
+        registerButton.frame =  CGRect(x: 35, y: confirmedPasswordField.bottom + 80, width: view.width - 70, height: 52)
         
     }
     

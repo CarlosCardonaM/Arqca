@@ -36,13 +36,91 @@ class HomeViewController: UIViewController {
         return header
     }()
     
-   private var backgroundView: UIView = {
-       let view = UIView()
-       view.backgroundColor = .secondarySystemBackground
-       view.clipsToBounds = true
-       view.layer.cornerRadius = CGFloat(20)
-       return view
-   }()
+    private var backgroundView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .secondarySystemBackground
+        view.clipsToBounds = true
+        view.layer.cornerRadius = CGFloat(20)
+        return view
+    }()
+    
+    private var projectGuerreroButton: UIButton = {
+        let button = UIButton()
+        button.layer.cornerRadius = CGFloat(10)
+        button.layer.masksToBounds = true
+        let backgroundImage = UIImageView(image: UIImage(named: "gerrero portada"))
+        button.addSubview(backgroundImage)
+        backgroundImage.clipsToBounds = true
+        backgroundImage.contentMode = .scaleAspectFill
+        return button
+    }()
+    
+    private var projectGuerreroLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Residencia Guerrero"
+        label.textColor = UIColor.white
+        label.textAlignment = .left
+        label.font = .systemFont(ofSize: 25)
+        label.layer.shadowColor = UIColor.black.cgColor
+        label.layer.masksToBounds = false
+        label.layer.shadowOffset = CGSize(width: 2 , height: 2)
+        label.layer.shadowRadius = 3.0
+        label.layer.shadowOpacity = 10
+        
+        return label
+    }()
+    
+    private var remodelacionBelenButton: UIButton = {
+        let button = UIButton()
+        button.layer.cornerRadius = CGFloat(10)
+        button.layer.masksToBounds = true
+        let backgroundImage = UIImageView(image: UIImage(named: "remodelacion belen"))
+        button.addSubview(backgroundImage)
+        backgroundImage.clipsToBounds = true
+        backgroundImage.contentMode = .scaleAspectFill
+        return button
+    }()
+    
+    private var remodelacionBelenLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Remodelación Beélen"
+        label.textColor = UIColor.white
+        label.textAlignment = .left
+        label.font = .systemFont(ofSize: 25)
+        label.layer.shadowColor = UIColor.black.cgColor
+        label.layer.masksToBounds = false
+        label.layer.shadowOffset = CGSize(width: 2 , height: 2)
+        label.layer.shadowRadius = 3.0
+        label.layer.shadowOpacity = 10
+        
+        return label
+    }()
+    
+    private var roofgardenMartinezButton: UIButton = {
+        let button = UIButton()
+        button.layer.cornerRadius = CGFloat(10)
+        button.layer.masksToBounds = true
+        let backgroundImage = UIImageView(image: UIImage(named: "roof garden martinez"))
+        button.addSubview(backgroundImage)
+        backgroundImage.clipsToBounds = true
+        backgroundImage.contentMode = .scaleAspectFill
+        return button
+    }()
+    
+    private var roofGardenMartinezLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Roof Garden Martínez"
+        label.textColor = UIColor.white
+        label.textAlignment = .left
+        label.font = .systemFont(ofSize: 25)
+        label.layer.shadowColor = UIColor.black.cgColor
+        label.layer.masksToBounds = false
+        label.layer.shadowOffset = CGSize(width: 2 , height: 2)
+        label.layer.shadowRadius = 3.0
+        label.layer.shadowOpacity = 10
+        
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +128,10 @@ class HomeViewController: UIViewController {
         title = "Home"
         scrollView.frame = view.bounds
         addSubviewsToScrollView()
+        
+        projectGuerreroButton.addTarget(self, action: #selector(didTapGuerreroButton), for: .touchUpInside)
+        
+        remodelacionBelenButton.addTarget(self, action: #selector(didTapRemodelacionBelenButton), for: .touchUpInside)
         
     }
     
@@ -71,9 +153,67 @@ class HomeViewController: UIViewController {
         
         backgroundView.frame = CGRect(x: 10, y: headerView.bottom + 30, width: view.width - 20, height: (scrollView.heigth * 2) - 250 )
         
-        tableView.frame = CGRect(x: 10, y: view.top + 10, width: backgroundView.width - 20, height: backgroundView.heigth - 20)
+        projectGuerreroButton.frame = CGRect(x: 10, y: view.top + 15, width: backgroundView.width - 20, height: 170)
+        
+        projectGuerreroLabel.frame = CGRect(x: 10, y: projectGuerreroButton.heigth / 2, width: projectGuerreroButton.width - 20, height: 70)
+        
+        remodelacionBelenButton.frame = CGRect(x: 10, y: projectGuerreroButton.bottom + 15, width: backgroundView.width - 20, height: 170)
+        
+        remodelacionBelenLabel.frame = CGRect(x: 10, y: remodelacionBelenButton.heigth / 2, width: remodelacionBelenButton.width - 20, height: 70)
+        
+        roofgardenMartinezButton.frame = CGRect(x: 10, y: remodelacionBelenButton.bottom + 15, width: backgroundView.width - 20, height: 170)
+        
+        roofGardenMartinezLabel.frame = CGRect(x: 10, y: roofgardenMartinezButton.heigth / 2, width: roofgardenMartinezButton.width - 20, height: 70)
+        
+        configureProjectGuerrero()
+        configureRemodelacionBelenButton()
+        configureRoofGardenMartinezButton()
+        
+//        tableView.frame = CGRect(x: 10, y: view.top + 10, width: backgroundView.width - 20, height: backgroundView.heigth - 20)
         
         
+    }
+    
+    private func configureRoofGardenMartinezButton() {
+        
+        guard roofgardenMartinezButton.subviews.count == 2 else {
+            print(roofgardenMartinezButton.subviews.count)
+            return
+        }
+        
+        guard let roofGardenBackground = roofgardenMartinezButton.subviews.first else {
+            return
+        }
+        
+        roofGardenBackground.frame = remodelacionBelenButton.bounds
+    }
+    
+    private func configureRemodelacionBelenButton() {
+        
+        guard remodelacionBelenButton.subviews.count == 2 else {
+            print(remodelacionBelenButton.subviews.count)
+            return
+        }
+        
+        guard let remodelacionBelenBackground = remodelacionBelenButton.subviews.first else {
+            return
+        }
+        
+        remodelacionBelenBackground.frame = remodelacionBelenButton.bounds
+    }
+    
+    private func configureProjectGuerrero() {
+        
+        guard projectGuerreroButton.subviews.count == 2 else {
+            print(projectGuerreroButton.subviews.count)
+            return
+        }
+        
+        guard let guerreroBackground = projectGuerreroButton.subviews.first else {
+            return
+        }
+        
+        guerreroBackground.frame = projectGuerreroButton.bounds
     }
     
     private func configureHeaderView() {
@@ -107,14 +247,49 @@ class HomeViewController: UIViewController {
         
     }
     
+    @objc func didTapRemodelacionBelenButton() {
+        let vc = remodelacionBelenViewController()
+        present(vc, animated: true)
+    }
+    
+    
+    @objc func didTapGuerreroButton() {
+        let vc = GuerreroViewController()
+        present(vc, animated: true)
+    }
+    
     
     private func addSubviewsToScrollView() {
         view.addSubview(scrollView)
         scrollView.addSubview(headerView)
         scrollView.addSubview(backgroundView)
-        backgroundView.addSubview(tableView)
+        backgroundView.addSubview(projectGuerreroButton)
+        projectGuerreroButton.addSubview(projectGuerreroLabel)
+        backgroundView.addSubview(remodelacionBelenButton)
+        remodelacionBelenButton.addSubview(remodelacionBelenLabel)
+        backgroundView.addSubview(roofgardenMartinezButton)
+        roofgardenMartinezButton.addSubview(roofGardenMartinezLabel)
+        
+        
+//        backgroundView.addSubview(tableView)
+        
 
     }
     
     
 }
+
+//
+//extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+//
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        10
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        
+//    }
+//
+//
+//}

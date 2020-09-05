@@ -84,7 +84,7 @@ class DesignViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        backgroundView.frame = CGRect(x: 12, y: view.safeAreaInsets.top + 20, width: view.width - 24, height: view.heigth -  view.safeAreaInsets.bottom - 200)
+        backgroundView.frame = CGRect(x: 12, y: view.safeAreaInsets.top + 20, width: view.width - 24, height: view.heigth -  view.safeAreaInsets.bottom - 260)
         
         designaLabel.frame = CGRect(x: 10, y: backgroundView.safeAreaInsets.top + 20, width: backgroundView.width - 20, height: 50)
         
@@ -139,7 +139,7 @@ class DesignViewController: UIViewController {
     
     @objc private func didTapExteriorButton() {
         print("tapped")
-        let vc = TestViewController()
+        let vc = ExteriorViewController()
 //        vc.modalPresentationStyle = .overCurrentContext
         present(vc, animated: true)
     }
