@@ -9,13 +9,11 @@
 /* Begin PBXBuildFile section */
 		484D3A7C2503317C00167561 /* InteriorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484D3A7B2503317C00167561 /* InteriorViewController.swift */; };
 		484D3A7E250331C000167561 /* ExteriorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484D3A7D250331C000167561 /* ExteriorViewController.swift */; };
-		484D3A8025034EF700167561 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484D3A7F25034EF700167561 /* TestViewController.swift */; };
 		485000BC250169BF0052A4B5 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485000BB250169BF0052A4B5 /* AuthManager.swift */; };
 		4887416B24FF2C32004B61C3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4887416A24FF2C32004B61C3 /* SearchViewController.swift */; };
 		4887416D24FF2C43004B61C3 /* DesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4887416C24FF2C43004B61C3 /* DesignViewController.swift */; };
 		4887416F24FF2C5E004B61C3 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4887416E24FF2C5E004B61C3 /* NotificationsViewController.swift */; };
 		4887417124FF2C78004B61C3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4887417024FF2C78004B61C3 /* ProfileViewController.swift */; };
-		489B504A2503FB4D0081887A /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489B50492503FB4D0081887A /* ProjectTableViewCell.swift */; };
 		489B504D25040C350081887A /* GuerreroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489B504C25040C350081887A /* GuerreroViewController.swift */; };
 		489B504F25040D8D0081887A /* remodelacionBelenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489B504E25040D8D0081887A /* remodelacionBelenViewController.swift */; };
 		48A66C7225006BFD004B18D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48A66C7125006BFC004B18D9 /* GoogleService-Info.plist */; };
@@ -34,13 +32,11 @@
 /* Begin PBXFileReference section */
 		484D3A7B2503317C00167561 /* InteriorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteriorViewController.swift; sourceTree = "<group>"; };
 		484D3A7D250331C000167561 /* ExteriorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExteriorViewController.swift; sourceTree = "<group>"; };
-		484D3A7F25034EF700167561 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		485000BB250169BF0052A4B5 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		4887416A24FF2C32004B61C3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4887416C24FF2C43004B61C3 /* DesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignViewController.swift; sourceTree = "<group>"; };
 		4887416E24FF2C5E004B61C3 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		4887417024FF2C78004B61C3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		489B50492503FB4D0081887A /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		489B504C25040C350081887A /* GuerreroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuerreroViewController.swift; sourceTree = "<group>"; };
 		489B504E25040D8D0081887A /* remodelacionBelenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = remodelacionBelenViewController.swift; sourceTree = "<group>"; };
 		48A66C7125006BFC004B18D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -169,8 +165,6 @@
 			children = (
 				484D3A7B2503317C00167561 /* InteriorViewController.swift */,
 				484D3A7D250331C000167561 /* ExteriorViewController.swift */,
-				484D3A7F25034EF700167561 /* TestViewController.swift */,
-				489B50492503FB4D0081887A /* ProjectTableViewCell.swift */,
 			);
 			path = DesignVC;
 			sourceTree = "<group>";
@@ -309,7 +303,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				489B504F25040D8D0081887A /* remodelacionBelenViewController.swift in Sources */,
-				484D3A8025034EF700167561 /* TestViewController.swift in Sources */,
 				489B504D25040C350081887A /* GuerreroViewController.swift in Sources */,
 				48CE384E24FF3B2D00B3C88A /* LoginViewController.swift in Sources */,
 				48B4672A24FF0FAF008B37C6 /* AppDelegate.swift in Sources */,
@@ -320,7 +313,6 @@
 				4887416F24FF2C5E004B61C3 /* NotificationsViewController.swift in Sources */,
 				4887417124FF2C78004B61C3 /* ProfileViewController.swift in Sources */,
 				485000BC250169BF0052A4B5 /* AuthManager.swift in Sources */,
-				489B504A2503FB4D0081887A /* ProjectTableViewCell.swift in Sources */,
 				4887416D24FF2C43004B61C3 /* DesignViewController.swift in Sources */,
 				484D3A7E250331C000167561 /* ExteriorViewController.swift in Sources */,
 				484D3A7C2503317C00167561 /* InteriorViewController.swift in Sources */,

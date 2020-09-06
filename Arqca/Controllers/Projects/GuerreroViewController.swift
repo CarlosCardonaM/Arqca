@@ -146,7 +146,7 @@ class GuerreroViewController: UIViewController {
         titleLabel.frame = CGRect(x: 10, y: 25, width: view.width - 20, height: 60)
         scrollView.frame =  CGRect(x: 0, y: titleLabel.bottom + 20, width: view.right, height: view.heigth)
         scrollView.contentSize = CGSize(width: view.width, height: 1500)
-        descriptionView.frame = CGRect(x: 10, y: 10, width: view.width - 10, height: 450)
+        descriptionView.frame = CGRect(x: 10, y: 10, width: view.width - 20, height: 450)
         backgroundView.frame = CGRect(x: 10, y: descriptionView.bottom + 20, width: view.width - 20, height: 870)
         descriptionTitleLabel.frame = CGRect(x: 10, y: 10, width: view.width - 20, height: 50)
         descriptionLabel.frame = CGRect(x: 10, y: descriptionTitleLabel.bottom + 10, width: view.width - 20, height: 360)
