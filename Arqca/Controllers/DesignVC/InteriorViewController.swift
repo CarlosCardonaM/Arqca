@@ -18,14 +18,6 @@ class InteriorViewController: UIViewController {
         return scroll
     }()
     
-    private var titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Interiors"
-        label.textAlignment = .left
-        label.font = .systemFont(ofSize: 45, weight: .medium)
-        return label
-    }()
-    
     private var remodelacionLabel: UILabel = {
         let label = UILabel()
         label.text = "Remodelacion:"
@@ -41,30 +33,6 @@ class InteriorViewController: UIViewController {
         view.clipsToBounds = true
         view.layer.cornerRadius = CGFloat(20)
         return view
-    }()
-    
-    private var habitacionButon: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor.systemFill
-        button.layer.masksToBounds = true
-        button.layer.cornerRadius = CGFloat(20)
-        return button
-    }()
-    
-    private var mobilarioButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor.systemFill
-        button.layer.masksToBounds = true
-        button.layer.cornerRadius = CGFloat(20)
-        return button
-    }()
-    
-    private var oficinaButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor.systemFill
-        button.layer.masksToBounds = true
-        button.layer.cornerRadius = CGFloat(20)
-        return button
     }()
     
     private var diseñoLabel: UILabel = {
@@ -84,28 +52,20 @@ class InteriorViewController: UIViewController {
         return view
     }()
     
-    private var diseñoEspaciosButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor.systemFill
-        button.layer.masksToBounds = true
-        button.layer.cornerRadius = CGFloat(20)
-        return button
+    private var remodelacionTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = UIColor.systemBackground
+        tableView.layer.cornerRadius = CGFloat(20)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "remodelacionCell")
+        return tableView
     }()
     
-    private var diseñoMobiliarioButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor.systemFill
-        button.layer.masksToBounds = true
-        button.layer.cornerRadius = CGFloat(20)
-        return button
-    }()
-    
-    private var diseñoOficinaButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor.systemFill
-        button.layer.masksToBounds = true
-        button.layer.cornerRadius = CGFloat(20)
-        return button
+    private var diseñoTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = UIColor.tertiarySystemBackground
+        tableView.layer.cornerRadius = CGFloat(20)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "diseñoCell")
+        return tableView
     }()
     
     
@@ -114,6 +74,10 @@ class InteriorViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.systemBackground
         addSubviews()
+        diseñoTableView.delegate = self
+        remodelacionTableView.delegate = self
+        diseñoTableView.dataSource = self
+        remodelacionTableView.dataSource = self
     }
     
     override func viewDidLayoutSubviews() {
@@ -122,48 +86,62 @@ class InteriorViewController: UIViewController {
         
         scrollView.contentSize = CGSize(width: view.width, height: view.heigth + 200)
         
-        titleLabel.frame = CGRect(x: 10, y: 25, width: view.width - 20, height: 60)
-        
-        remodelacionLabel.frame = CGRect(x: 10, y: titleLabel.bottom + 30, width: view.width - 20, height: 50)
+        remodelacionLabel.frame = CGRect(x: 10, y: view.safeAreaInsets.top + 10, width: view.width - 20, height: 50)
         
         remodecionBGView.frame = CGRect(x: 10, y: remodelacionLabel.bottom + 5, width: view.width - 20, height: 220)
         
-        habitacionButon.frame = CGRect(x: 10, y: 10, width: remodecionBGView.width - 20, height: 60)
-        
-        mobilarioButton.frame = CGRect(x: 10, y: habitacionButon.bottom + 10, width: remodecionBGView.width - 20, height: 60)
-        
-        oficinaButton.frame = CGRect(x: 10, y: mobilarioButton.bottom + 10, width: remodecionBGView.width - 20, height: 60)
+        remodelacionTableView.frame = CGRect(x: 10, y: 10, width: remodecionBGView.width - 20, height: remodecionBGView.heigth - 20)
         
         diseñoLabel.frame = CGRect(x: 10, y: remodecionBGView.bottom + 20, width: view.width - 20, height: 50)
         
         diseñoBGView.frame = CGRect(x: 10, y: diseñoLabel.bottom + 5, width: view.width - 20, height: 220)
         
-        diseñoEspaciosButton.frame = CGRect(x: 10, y: 10, width: diseñoBGView.width - 20, height: 60)
+        diseñoTableView.frame = CGRect(x: 10, y: 10, width: diseñoBGView.width - 20, height: diseñoBGView.heigth - 20)
         
-        diseñoMobiliarioButton.frame = CGRect(x: 10, y: diseñoEspaciosButton.bottom + 10, width: diseñoBGView.width - 20, height: 60)
-        
-        diseñoOficinaButton.frame = CGRect(x: 10, y: diseñoMobiliarioButton.bottom + 10, width: diseñoBGView.width - 20, height: 60)
     }
     
     
     
     private func addSubviews() {
         view.addSubview(scrollView)
-        scrollView.addSubview(titleLabel)
         scrollView.addSubview(remodelacionLabel)
         scrollView.addSubview(remodecionBGView)
-        remodecionBGView.addSubview(habitacionButon)
-        remodecionBGView.addSubview(mobilarioButton)
-        remodecionBGView.addSubview(oficinaButton)
+        remodecionBGView.addSubview(remodelacionTableView)
         scrollView.addSubview(diseñoLabel)
         scrollView.addSubview(diseñoBGView)
-        diseñoBGView.addSubview(diseñoEspaciosButton)
-        diseñoBGView.addSubview(diseñoMobiliarioButton)
-        diseñoBGView.addSubview(diseñoOficinaButton)
+        diseñoBGView.addSubview(diseñoTableView)
     }
     
     
 }
 
 
-
+extension InteriorViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if tableView == remodelacionTableView, let cell = tableView.dequeueReusableCell(withIdentifier: "cell"){
+            return cell
+        }
+        else if tableView == diseñoTableView, let cell = tableView.dequeueReusableCell(withIdentifier: "cell2") {
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        diseñoTableView.deselectRow(at: indexPath, animated: true)
+        remodelacionTableView.deselectRow(at: indexPath, animated: true)
+        
+        let vc = UIViewController()
+        present(vc, animated: true)
+    }
+    
+    
+}

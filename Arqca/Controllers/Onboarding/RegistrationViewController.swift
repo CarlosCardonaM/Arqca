@@ -11,15 +11,6 @@ import FirebaseAuth
 
 class RegistrationViewController: UIViewController {
     
-    
-    private var labelTitle: UILabel = {
-        let label = UILabel()
-        label.text = "Sign Up"
-        label.textAlignment = .center
-        label.font = .systemFont(ofSize: 50, weight: .regular)
-        return label
-    }()
-    
     private var nameField: UITextField = {
         let field = UITextField()
         field.backgroundColor = UIColor.secondarySystemBackground
@@ -101,7 +92,7 @@ class RegistrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        title = "Create an account"
+        title = "Sign Up"
         
         addSubviews()
         
@@ -117,11 +108,10 @@ class RegistrationViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        labelTitle.frame =  CGRect(x: 35, y: 85, width: view.width / 2, height: 100)
         
-        nameField.frame =  CGRect(x: 35, y: labelTitle.bottom + 80, width: view.width / 3.2, height: 52)
+        nameField.frame =  CGRect(x: 35, y: view.safeAreaInsets.top + 70, width: view.width / 3.2, height: 52)
         
-        lastNameField.frame =  CGRect(x: nameField.right + 10, y: labelTitle.bottom + 80, width: view.width / 2, height: 52)
+        lastNameField.frame =  CGRect(x: nameField.right + 10, y: nameField.top, width: (view.width / 2) - 10, height: 52)
         
         emailField.frame =  CGRect(x: 35, y: nameField.bottom + 10, width: view.width - 70, height: 52)
         
@@ -136,7 +126,8 @@ class RegistrationViewController: UIViewController {
     
     @objc private func didTapRegisterButton() {
         
-        guard let name = nameField.text, !name.isEmpty, let lastName = lastNameField.text, !lastName.isEmpty ,let email = emailField.text, !email.isEmpty, email.contains("@"), email.contains(".com"), let password = passwordField.text, !password.isEmpty, password.count > 7, let confirmedPassword = confirmedPasswordField.text, !confirmedPassword.isEmpty, confirmedPassword == password else {
+        guard let name = nameField.text, !name.isEmpty, let lastName = lastNameField.text, !lastName.isEmpty ,let email = emailField.text, !email.isEmpty, email.contains("@"), email.contains(".com"),
+            let password = passwordField.text, !password.isEmpty, password.count > 7, let confirmedPassword = confirmedPasswordField.text, !confirmedPassword.isEmpty, confirmedPassword == password else {
             configureRegisterAlert()
             return
         }
@@ -178,7 +169,6 @@ class RegistrationViewController: UIViewController {
     
     private func addSubviews() {
         
-        view.addSubview(labelTitle)
         view.addSubview(nameField)
         view.addSubview(lastNameField)
         view.addSubview(emailField)
@@ -187,5 +177,4 @@ class RegistrationViewController: UIViewController {
         view.addSubview(registerButton)
         
     }
-    
 }

@@ -10,6 +10,13 @@ import UIKit
 
 class DesignViewController: UIViewController {
     
+    private var scrollView: UIScrollView = {
+        let scroll = UIScrollView()
+        scroll.backgroundColor = UIColor.systemBackground
+        scroll.clipsToBounds = true
+        return scroll
+    }()
+    
     private var interiorButton: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = CGFloat(10)
@@ -84,7 +91,11 @@ class DesignViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        backgroundView.frame = CGRect(x: 12, y: view.safeAreaInsets.top + 20, width: view.width - 24, height: view.heigth -  view.safeAreaInsets.bottom - 220)
+        scrollView.frame = view.bounds
+        
+        scrollView.contentSize = CGSize(width: view.width, height: view.heigth - 145)
+        
+        backgroundView.frame = CGRect(x: 12, y: view.top + 20, width: view.width - 24, height: 510)
         
         designaLabel.frame = CGRect(x: 10, y: backgroundView.safeAreaInsets.top + 20, width: backgroundView.width - 20, height: 50)
         
@@ -133,20 +144,31 @@ class DesignViewController: UIViewController {
     @objc private func didTapInteriorButton() {
         print("tapped too")
         let vc = InteriorViewController()
+        let navVc = UINavigationController(rootViewController: vc)
+        vc.title = "Interior"
+        navVc.navigationBar.prefersLargeTitles = true
+        navigationController?.pushViewController(vc, animated: true)
 //        vc.modalPresentationStyle = .overCurrentContext
-        present(vc, animated: true)
+//        present(vc, animated: true)
     }
     
     @objc private func didTapExteriorButton() {
         print("tapped")
         let vc = ExteriorViewController()
+        let navVc = UINavigationController(rootViewController: vc)
+        vc.title = "Exterior"
+        navVc.navigationBar.prefersLargeTitles = true
+        navigationController?.pushViewController(vc, animated: true)
 //        vc.modalPresentationStyle = .overCurrentContext
-        present(vc, animated: true)
+//        present(navVc, animated: true)
+        
     }
     
+    
+    
     private func addSubviews() {
-        
-        view.addSubview(backgroundView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(backgroundView)
         interiorButton.addSubview(interiorLabel)
         exteriorButton.addSubview(exteriorLabel)
         backgroundView.addSubview(designaLabel)

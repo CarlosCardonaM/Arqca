@@ -84,6 +84,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let _ = UINavigationController(rootViewController: self)
+        
+        
         addSubviews()
         view.backgroundColor = .systemBackground
         
@@ -157,9 +160,12 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func didTapCreateNewAccountButton() {
+        
         let vc = RegistrationViewController()
-        vc.modalPresentationStyle = .pageSheet
-        present(vc, animated: true)
+        let navVc = UINavigationController(rootViewController: vc)
+        navVc.navigationBar.prefersLargeTitles = true
+        present(navVc, animated: true)
+        print("someone tapped me")
     }
     
     @objc private func didTapTermsButton() {

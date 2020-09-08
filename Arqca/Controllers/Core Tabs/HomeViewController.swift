@@ -233,7 +233,7 @@ class HomeViewController: UIViewController {
     private func handleNotAuthenticated() {
         
         if Auth.auth().currentUser == nil {
-            //            Show Log In VC
+            //Show Log In VC
             let LoginVc = LoginViewController()
             LoginVc.modalPresentationStyle = .fullScreen
             present(LoginVc, animated: true)
